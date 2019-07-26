@@ -38,6 +38,7 @@ namespace EmployeeManagement
 
             services.AddMvc().AddXmlSerializerFormatters();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddTransient<IFeedbackRepository, FeedbackRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
