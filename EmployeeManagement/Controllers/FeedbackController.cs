@@ -22,7 +22,7 @@ namespace EmployeeManagement.Controllers
         {
             return View();
         }
-
+        [HttpPost]
         public IActionResult Index(Feedback feedback)
         {
             if (ModelState.IsValid)

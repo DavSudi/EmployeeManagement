@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EmployeeManagement.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -36,7 +38,14 @@ namespace EmployeeManagement
                     .AddEntityFrameworkStores<AppDbContext>();
            
 
-            services.AddMvc().AddXmlSerializerFormatters();
+            services.AddMvc(
+                options => {
+                    var policy = new AuthorizationPolicyBuilder()
+                                   .RequireAuthenticatedUser()
+                                   .Build();
+                    options.Filters.Add(new AuthorizeFilter(policy));
+                }).AddXmlSerializerFormatters();
+
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddTransient<IFeedbackRepository, FeedbackRepository>();
         }
