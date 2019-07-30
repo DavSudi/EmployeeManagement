@@ -2,22 +2,21 @@
 
 @{ 
     ViewBag.Title = "User Login";
-}}
-
-<h1>User Login</h1>
+}
 
 <div class="row">
      <div class="col-md-12">
-         <form method="post">
+         <form method="post" class="form">
              <div asp-validation-summary="All" class="text-danger"></div>
+             <h2 class="form-heading">Please sign in</h2>
              <div class="form-group">
-                 <label asp-for="Email"></label>
+                 <label asp-for="Email" class="sr-only"></label>
                  <input asp-for="Email" type="email" class="form-control" placeholder="Email" />
                  <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
                  <span asp-validation-for="Email" class="text-danger"></span>
              </div>
              <div class="form-group">
-                 <label asp-for="Password"></label>
+                 <label asp-for="Password" class="sr-only"></label>
                  <input asp-for="Password" type="password" class="form-control" placeholder="Password" />
                  <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                  <span asp-validation-for="Password" class="text-danger"></span>
@@ -30,7 +29,7 @@
                      </label>
                  </div>
              </div>
-             <button type="submit" class="btn btn-primary">Login</button>
+             <button class="btn btn-primary btn-block" type="submit">Log in</button>
          </form>
      </div>
 </div>
