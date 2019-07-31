@@ -8,6 +8,8 @@
         <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
         <link href="~/css/site.css" rel="stylesheet" />
         <script src="~/lib/jquery/jquery.js"></script>
+        <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
         <script src="~/lib/bootstrap/js/bootstrap.js"></script>
     </environment>
     <environment exclude="Development">
@@ -27,9 +29,9 @@
     <div class="container">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <a class="navbar-brand" asp-action="index" asp-controller="home">
-                <img src="~/images/logo.png" height="30" width="30"/>
+                <img src="~/images/logo.png" height="30" width="30" />
             </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar"> 
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -39,9 +41,9 @@
                     </li>
                     <li class="nav-item">
                         <a asp-action="create" asp-controller="home" class="nav-link">Create</a>
-                    </li>  
+                    </li>
                     <li class="nav-item">
-                      <a asp-action="Index" asp-controller="Feedback" class="nav-link">Feedback</a>
+                        <a asp-action="Index" asp-controller="Feedback" class="nav-link">Feedback</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -69,6 +71,7 @@
                 </ul>
             </div>
         </nav>
+
         <div>
             @RenderBody()
         </div>
@@ -76,7 +79,6 @@
         {
             @RenderSection("Scripts", required: true)
         }
-    </div>
-
+    </div>     
 </body>
 </html>
