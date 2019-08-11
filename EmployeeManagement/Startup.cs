@@ -30,7 +30,7 @@ namespace EmployeeManagement
         {
             services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(_config.GetConnectionString("EmpDbConn")));
             //Adding Identity below for authentication and Authorization
-            services.AddIdentity<IdentityUser, IdentityRole>(
+            services.AddIdentity<ApplicationUser, IdentityRole>(
                      options => {
                          options.Password.RequiredLength = 8;
                          options.Password.RequiredUniqueChars = 2;

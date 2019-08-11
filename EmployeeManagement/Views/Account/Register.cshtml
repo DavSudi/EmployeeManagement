@@ -7,25 +7,28 @@
 
 <div class="row">
     <div class="col-md-12">
-      <form method="post" class="form">
-        <div asp-validation-summary="All" class="text-danger"></div>
-        <h2 class="form-heading">Please Register</h2>            
-        <label asp-for="Email"  class="sr-only"></label>
-        <input asp-for="Email" type="email" class="form-control first" placeholder="Email" required autofocus />
-        <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
-        <span asp-validation-for="Email" class="text-danger"></span>           
-           
-        <label asp-for="Password"  class="sr-only"></label>
-        <input asp-for="Password" type="password" class="form-control" placeholder="Password" />
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-        <span asp-validation-for="Password" class="text-danger"></span>             
-            
-        <label asp-for="ConfirmPassword"  class="sr-only"></label>
-        <input asp-for="ConfirmPassword" type="password" class="form-control last" placeholder="Retype password" required />
-        <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
-        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-            
-        <button class="btn btn-primary btn-block" type="submit">Register</button>
-      </form>       
+        <form method="post" class="form">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <h2 class="form-heading">Please Register</h2>
+            <label asp-for="Email" class="sr-only"></label>
+            <input asp-for="Email" type="email" class="form-control first" placeholder="Email" required autofocus />
+            <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+            <span asp-validation-for="Email" class="text-danger"></span>
+
+            <label asp-for="Password" class="sr-only"></label>
+            <input asp-for="Password" type="password" class="form-control" placeholder="Password" />
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            <span asp-validation-for="Password" class="text-danger"></span>
+
+            <label asp-for="ConfirmPassword" class="sr-only"></label>
+            <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Retype password" required />
+            <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+
+            <label asp-for="City" class="sr-only"></label>
+            <input asp-for="City" class="form-control last" placeholder="City"/>  
+
+            <button class="btn btn-primary btn-block" type="submit">Register</button>
+        </form>       
 </div>
 </div>                                                                                                   
