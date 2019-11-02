@@ -6,28 +6,30 @@
 
 <div class="row">
      <div class="col-md-12">
-         <form method="post" class="form">
+         <form method="post" class="form" style="background-color:#343a40; margin-top:50px; align-items:center; color:white; border-radius:5px;">
              <div asp-validation-summary="All" class="text-danger"></div>
-             <h2 class="form-heading">Please sign in</h2>              
+             <h2 class="form-heading">Please sign in</h2>    
+             <div class="form-group">
                  <label asp-for="Email" class="sr-only"></label>
                  <input asp-for="Email" type="email" class="form-control" placeholder="Email" />
                  <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
-                 <span asp-validation-for="Email" class="text-danger"></span>          
-             
-                 <label asp-for="Password" class="sr-only"></label>
-                 <input asp-for="Password" type="password" class="form-control" placeholder="Password" />
-                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                 <span asp-validation-for="Password" class="text-danger"></span>
-            
-             <div class="form-group">
-                 <div class="checkbox">
-                     <label asp-for="RememberMe">
-                         <input type="checkbox">
-                         @Html.DisplayNameFor(m => m.RememberMe)
-                     </label>
-                 </div>
-             </div>
-             <button class="btn btn-primary btn-block" type="submit">Log in</button>
-         </form>
+                 <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="sr-only"></label>
+                <input asp-for="Password" type="password" class="form-control" placeholder="Password" />
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label asp-for="RememberMe">
+                        <input type="checkbox">
+                        @Html.DisplayNameFor(m => m.RememberMe)
+                    </label>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit">Log in</button>
+</form>
      </div>
 </div>
